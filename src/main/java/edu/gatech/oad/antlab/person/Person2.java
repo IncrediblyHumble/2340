@@ -1,12 +1,17 @@
 package edu.gatech.oad.antlab.person;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  *  A simple class for person 2
  *  returns their name and a
  *  modified string 
  *
  * @author Bob
- * @version 1.1
+ * @author Ashley
+ * @version 2.0
  */
 public class Person2 {
     /** Holds the persons real name */
@@ -30,8 +35,22 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+        if (input == null) {
+            throw new IllegalArgumentException("Input is null");
+        }
+	    Random gen = new Random();
+	    char[] chars = input.toCharArray();
+        List<Character> charList = new ArrayList<Character>();
+        for (int i = 0; i < chars.length; i++) {
+            charList.add(chars[i]);
+        }
+        StringBuilder builder = new StringBuilder(chars.length);
+        while (charList.size() != 0) {
+            int randIndex = gen.nextInt(charList.size() + 1);
+            builder.append(charList.remove(randIndex));
+        }
+        String newString = builder.toString();
+	    return newString;
 	}
 	/**
 	 * Return a string rep of this object
