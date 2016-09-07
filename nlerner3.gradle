@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes "Main": "edu.gatech.oad.antlab.pkg1.AntLabMain"
+        attributes "Rescources": "resources.jar"
+    }
+}
+
+dependencies {
+    compile files("lib/resources.jar")
+}

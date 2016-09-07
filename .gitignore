@@ -9,3 +9,6 @@
 .idea/jsLibraryMappings.xml
 
 .idea
+.iml
+build/
+.gradle/
