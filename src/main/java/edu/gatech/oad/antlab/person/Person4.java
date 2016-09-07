@@ -1,4 +1,4 @@
-//package edu.gatech.oad.antlab.person;
+package edu.gatech.oad.antlab.person;
 
 /**
  *  A simple class for person 4
@@ -6,7 +6,7 @@
  *  modified string 
  *  
  *  @author Maddie Ravichandran
- *  @version 1.1
+ *  @version 2.0
  */
 public class Person4 {
   /** Holds the persons real name */
