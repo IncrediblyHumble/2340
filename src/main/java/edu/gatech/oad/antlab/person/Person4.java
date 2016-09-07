@@ -1,11 +1,11 @@
-package edu.gatech.oad.antlab.person;
+//package edu.gatech.oad.antlab.person;
 
 /**
  *  A simple class for person 4
  *  returns their name and a
  *  modified string 
  *  
- *  @author Bob
+ *  @author Maddie Ravichandran
  *  @version 1.1
  */
 public class Person4 {
@@ -16,9 +16,9 @@ public class Person4 {
      * name
      * @param pname the person's real name
      */
-  public Person4(String pname) {
-    name = pname;
-  }
+    public Person4(String pname) {
+        name = pname;
+    }
     /**
      * This method should return a string
      * where each character is 1 greater 
@@ -31,7 +31,19 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 4 put your implementation here
-      return null;
+        String word = "";
+        for (int i = 0; i < input.length(); i++) {
+            char letter; 
+            if (input.charAt(i) == 'Z') {
+                letter = 'A';
+            } else if (input.charAt(i) == 'z') {
+                letter = 'a';
+            } else {
+                letter = (char) (input.charAt(i) + 1);
+            }
+            word = word + letter;
+        }
+      return word;
     }
     
     /**
@@ -45,6 +57,7 @@ public class Person4 {
     public String toString(String input) {
       return name + calc(input);
     }
-
 }
+
+
 
