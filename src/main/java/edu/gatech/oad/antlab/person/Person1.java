@@ -6,6 +6,7 @@ package edu.gatech.oad.antlab.person;
  *  modified string 
  *  
  *  @author Bob
+ *  @author Derek
  *  @version 1.1
  */
 public class Person1 {
@@ -30,8 +31,11 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 1 put your implementation here
-	  return null;
+      String copy = Character.toString(input.charAt(2));
+	  for (int i = 1; i < input.length(); i++) {
+	      copy += (input.charAt(((i + 2) % input.length())));
+      }
+	  return copy;
 	}
 	
 	/**
