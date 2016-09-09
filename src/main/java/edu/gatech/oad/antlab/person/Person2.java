@@ -1,7 +1,5 @@
 package edu.gatech.oad.antlab.person;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -39,18 +37,15 @@ public class Person2 {
             throw new IllegalArgumentException("Input is null");
         }
 	    Random gen = new Random();
-	    char[] chars = input.toCharArray();
-        List<Character> charList = new ArrayList<Character>();
-        for (int i = 0; i < chars.length; i++) {
-            charList.add(chars[i]);
-        }
-        StringBuilder builder = new StringBuilder(chars.length);
-        while (charList.size() != 0) {
-            int randIndex = gen.nextInt(charList.size() + 1);
-            builder.append(charList.remove(randIndex));
-        }
-        String newString = builder.toString();
-	    return newString;
+		char[] chars = input.toCharArray();
+		for (int i = 0; i < chars.length - 1; i++) {
+			int randIndex = gen.nextInt(chars.length);
+			char holder = chars[i];
+			chars[i] = chars[randIndex];
+			chars[randIndex] = holder;
+		}
+		String newString = new String(chars);
+		return newString;
 	}
 	/**
 	 * Return a string rep of this object
