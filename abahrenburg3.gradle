@@ -9,6 +9,6 @@ dependencies {
 jar { 
 	manifest {
 		attributes "Main": "edu.gatech.oad.antlab.pkg1.AntLabMain"
-		attributes "Rescources": "resources.jar"
+		attributes "Resources": "resources.jar"
 	}
 }
